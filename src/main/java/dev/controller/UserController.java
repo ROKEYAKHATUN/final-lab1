@@ -61,7 +61,7 @@ public class UserController {
         }
         else {
             StudentService.update(user);
-            return "/";
+            return "/update";
         }
     }
 }
