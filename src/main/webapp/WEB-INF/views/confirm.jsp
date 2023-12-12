@@ -7,8 +7,13 @@
 
 <p>Your registration is successful. Please visit login page.</p>
 
-<p>Full Name: ${fullname}</p>
-<p>Email: ${email}</p>
+<p>Full Name: ${user.fullname}</p>
+<p>Email: ${user.email}</p>
+<p>Date Of Birth: ${user.dateOfBirth}</p>
+
+<hr>
+
+<a href="${pageContext.request.contextPath}">Home</a>
 
 </body>
 </html>

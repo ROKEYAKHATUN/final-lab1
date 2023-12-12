@@ -3,7 +3,7 @@
 <html>
 <head></head>
 <body>
-<h3>Hey, I am invoked!! ${name}</h3>
+<h3>Hey Students</h3>
 <hr>
 <a href="${pageContext.request.contextPath}">Home</a>
 </body>

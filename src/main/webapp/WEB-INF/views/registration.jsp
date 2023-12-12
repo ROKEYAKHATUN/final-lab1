@@ -3,37 +3,53 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <html>
-<head></head>
+<head>
+    <title>Create Student</title>
+</head>
 <body>
-<h3>Registration Page</h3>
 
-<form:form method="post" action="fifth" modelAttribute="user">
+<h2>Create Student</h2>
 
-<label>Full Name</label>
-<form:input path="fullname" id="fullname"/>
-<form:errors path="fullname"/>
+<form:form modelAttribute="student" method="post" action="/students/create">
+    <label for="id">ID:</label>
+    <form:input path="id" type="number" required="true" />
 
-<br><br>
+    <br/><br/>
 
-<label>Email</label>
-<form:input path="email" id="email"/>
-<form:errors path="email"/>
+    <label for="name">Name:</label>
+    <form:input path="name" required="true" />
 
-<br><br>
+    <br/><br/>
 
-<label>Password</label>
-<form:input path="password" id="password"/>
-<form:errors path="password"/>
+    <label for="email">Email:</label>
+    <form:input path="email" type="email" required="true" />
 
-<label>Gender</label>
-<form:radiobutton path="gender" id="male" label="Male" value="Male"/>
-<form:radiobutton path="gender" id="female" label="Female" value="Female"/>
-<form:errors path="gender"/>
+    <br/><br/>
 
-<br><br>
+    <label for="dateOfBirth">Date of Birth:</label>
+    <form:input path="dateOfBirth" type="date" required="true" />
 
-<input type="submit" value="Register" />
+    <br/><br/>
 
+    <label for="gender">Gender:</label>
+    <form:select path="gender" required="true">
+        <form:option value="MALE" label="Male" />
+        <form:option value="FEMALE" label="Female" />
+    </form:select>
+
+    <br/><br/>
+
+    <label for="quota">Quota:</label>
+    <form:input path="quota" required="true" />
+
+    <br/><br/>
+
+    <label for="country">Country:</label>
+    <form:input path="country" required="true" />
+
+    <br/><br/>
+
+    <input type="submit" value="Create Student" />
 </form:form>
 
 </body>
