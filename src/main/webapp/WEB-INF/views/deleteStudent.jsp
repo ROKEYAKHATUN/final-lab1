@@ -9,7 +9,6 @@
 
 <p>Are you sure you want to delete this student?</p>
 
-<!-- Display student details -->
 
 <form method="post" action="/students/${student.id}/delete">
     <input type="submit" value="Delete"/>

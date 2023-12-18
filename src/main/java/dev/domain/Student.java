@@ -52,7 +52,6 @@ public class Student {
         this.country = country;
     }
 
-    // Getters and setters for all fields
 
     public Integer getId() {
         return id;

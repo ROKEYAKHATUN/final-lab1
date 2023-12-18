@@ -19,5 +19,4 @@
         <property name="password" value=""/>
     </bean>
 
-    <!--<bean id="fc" class="dev.controller.UserController"/>-->
 </beans>

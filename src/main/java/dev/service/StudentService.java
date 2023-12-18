@@ -17,8 +17,6 @@ public class StudentService {
     }
 
     public void create(Student student) throws SQLException {
-        // You can perform any additional logic before creating the student
-        // For example, converting name to uppercase
         student.setName(student.getName().toUpperCase());
         studentRepository.create(student);
     }

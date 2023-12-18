@@ -8,8 +8,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
 
 @Repository
 public class StudentRepository {
@@ -27,12 +25,10 @@ public class StudentRepository {
             ResultSet resultSet = metaData.getTables(null, null, "students", null);
 
             if (!resultSet.next()) {
-                // Table does not exist, create it
                 createStudentsTable(connection);
             }
         } catch (SQLException e) {
-            // Handle the exception (log or rethrow as needed)
-//            logger.error("Error checking or creating table", e);
+            throw new RuntimeException("Error while checking or creating table", e);
         }
     }
 
@@ -51,10 +47,8 @@ public class StudentRepository {
 
     public void create(Student student) throws SQLException {
         try (Connection connection = dataSource.getConnection()) {
-            // Check if the table exists, create it if not
             createTableIfNotExists();
 
-            // Rest of the code for inserting data...
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO students (id, name, email, date_of_birth, gender, quota, country) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
             preparedStatement.setInt(1, student.getId());
