@@ -11,6 +11,9 @@
 
         <label>Id</label>
         <form:input path="id" id="id" readonly="true"/>
+        <form:errors path="id"/>
+
+        <br><br>
 
         <label>Full Name</label>
         <form:input path="name" id="name"/>
@@ -38,13 +41,26 @@
         <br><br>
 
         <label>Quota</label>
-        <form:input path="quota" id="quota"/>
+        <form:checkbox path="quota" value="N/A" id="quota"  />
         <form:errors path="quota"/>
 
         <br><br>
 
         <label>Country</label>
-        <form:input path="country" id="country"/>
+        <form:select path="country" id="country">
+            <form:option value="Bangladeshi" label="Bangladeshi"/>
+            <form:option value="United States" label="United States"/>
+            <form:option value="United Kingdom" label="United Kingdom"/>
+            <form:option value="Canada" label="Canada"/>
+            <form:option value="Australia" label="Australia"/>
+            <form:option value="Germany" label="Germany"/>
+            <form:option value="France" label="France"/>
+            <form:option value="Japan" label="Japan"/>
+            <form:option value="Brazil" label="Brazil"/>
+            <form:option value="China" label="China"/>
+            <form:option value="India" label="India"/>
+            <form:option value="South Africa" label="South Africa"/>
+        </form:select>
         <form:errors path="country"/>
 
         <br><br>
