@@ -55,7 +55,7 @@ public class StudentController {
     public String findStudent(@PathVariable int id, Model model) throws SQLException {
         Student student = studentService.getStudentById(id);
         model.addAttribute("student", student);
-        return "find";
+        return "findOne";
     }
 
     @RequestMapping(value = "students/{id}/edit", method = RequestMethod.GET)

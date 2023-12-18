@@ -32,7 +32,7 @@
 
                 <tr>
                     <td>${student.id}</td>
-                    <td>${student.name}</td>
+                    <td><a href="${pageContext.request.contextPath}/students/${student.id}">${student.name}</a></td>
                     <td>${student.email}</td>
                     <td>${student.dateOfBirth}</td>
                     <td>${student.gender}</td>
