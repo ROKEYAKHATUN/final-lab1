@@ -1,25 +1,27 @@
 package dev.domain;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
 
 public class Student {
 
-    @NotBlank
     @NotNull
-    private int id;
+    private Integer id;
+
     @NotBlank
+    @Length(max = 100)
     private String name;
 
-    @NotNull
-    @Pattern(regexp = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$", message = "Incorrect email format")
+    @NotBlank
+    @Email
+    @Length(max = 100)
     private String email;
-
 
     @NotNull
     @Past
@@ -29,14 +31,18 @@ public class Student {
     @NotNull
     private String gender;
 
-    @NotNull
+    @NotBlank
+    @Length(max = 10)
     private String quota = "N/A";
 
-    @NotNull
-    private String country = "Bangladesh";
+    @NotBlank
+    @Length(max = 100)
+    private String country = "Bangladeshi";
 
+    public Student() {
+    }
 
-    public Student(int id, String name, String email, LocalDate dateOfBirth, String gender, String quota, String country) {
+    public Student(Integer id, String name, String email, LocalDate dateOfBirth, String  gender, String quota, String country) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -46,11 +52,13 @@ public class Student {
         this.country = country;
     }
 
-    public int getId() {
+    // Getters and setters for all fields
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -78,12 +86,11 @@ public class Student {
         this.dateOfBirth = dateOfBirth;
     }
 
-
     public String getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(String  gender) {
         this.gender = gender;
     }
 
@@ -101,8 +108,5 @@ public class Student {
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    public Student() {
     }
 }

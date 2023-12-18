@@ -5,12 +5,12 @@
 <html>
 <head></head>
 <body>
-    <h3>Registration Page</h3>
+    <h3>Edit Student</h3>
 
-    <form:form method="post" action="store" modelAttribute="student">
+    <form:form method="post" action="${pageContext.request.contextPath}/students/${id}/edit" modelAttribute="student">
 
         <label>Id</label>
-        <form:input path="id" id="id"/>
+        <form:input path="id" id="id" readonly="true"/>
 
         <label>Full Name</label>
         <form:input path="name" id="name"/>
@@ -49,7 +49,7 @@
 
         <br><br>
 
-        <input type="submit" value="Register" />
+        <input type="submit" value="Update" />
 
     </form:form>
 
