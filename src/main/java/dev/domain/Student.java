@@ -26,6 +26,7 @@ public class Student {
     @NotNull
     @Past
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @Age
     private LocalDate dateOfBirth;
 
     @NotNull
